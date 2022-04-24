@@ -1,0 +1,35 @@
+﻿@using EntityLayer.Concrete
+@model List<AddressAndPhone>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>AdresVeTelefonID</th>
+        <th>KişiID</th>
+        <th>Adres</th>
+        <th>Telefon No</th>
+        <th>İlçe</th>
+        <th>İl</th>
+        <th>Düzenle</th>
+        <th>Sil</th>
+    </tr>
+    <tbody>
+        @foreach (var adph in Model)
+        {
+        <tr>
+            <td>@adph.AddressAndPhoneID</td>
+            <td>@adph.PersonID</td>
+            <td>@adph.Address</td>
+            <td>@adph.PhoneNumber</td>
+            <td>@adph.State</td>
+            <td>@adph.City</td>
+            <td><a href="/AddressAndPhone/TelefonVeAdresGuncelle/@adph.AddressAndPhoneID" class="btn btn-info">Güncelle</a></td>
+            <td><a href="/AddressAndPhone/TelefonVeAdresSil/@adph.AddressAndPhoneID" class="btn btn-danger">Sil</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+<a href="/AddressAndPhone/TelefonVeAdresEkle/" class="btn btn-primary">Yeni Kayıt Ekle</a>

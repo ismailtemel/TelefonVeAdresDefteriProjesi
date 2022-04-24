@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "TelefonVeAdresEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>TelefonVeAdresEkle</h1>
+
+<form class="form-group" method="post">
+    <br />
+    @Html.Label("KişiID")
+    <input type="text" name="PersonID" class="form-control" />
+    <br />
+    @Html.Label("Adres")
+    <input type="text" name="Address" class="form-control" />
+    <br />
+    @Html.Label("Telefon Numarası")
+    <input type="text" name="PhoneNumber" class="form-control" />
+    <br />
+    @Html.Label("İlçe")
+    <input type="text" name="State" class="form-control" />
+    <br />
+    @Html.Label("İl")
+    <input type="text" name="City" class="form-control" />
+    <br />
+    <button class="btn btn-primary">Ekle</button>
+</form>
+

@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "KayıtEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>KayıtEkle</h1>
+<form class="form-group" method="post">
+    <br />
+    @Html.Label("Ad")
+    <input type="text" name="Name" class="form-control" />
+    <br />
+    @Html.Label("Soyad")
+    <input type="text" name="Surname" class="form-control"/>
+    <br />
+    @Html.Label("Yaş")
+    <input type="text" name="Age" class="form-control"/>
+    <br />
+    <button class="btn btn-primary">Ekle</button>
+</form>
+

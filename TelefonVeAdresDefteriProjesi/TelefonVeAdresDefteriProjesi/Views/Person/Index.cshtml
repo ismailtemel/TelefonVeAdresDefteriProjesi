@@ -1,0 +1,33 @@
+﻿@using EntityLayer.Concrete
+@model List<Person>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>KişiID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Yaş</th>
+        <th>Düzenle</th>
+        <th>Sil</th>
+    </tr>
+    <tbody>
+        @foreach (var prsn in Model)
+        {
+            <tr>
+                <td>@prsn.PersonID</td>
+                <td>@prsn.Name</td>
+                <td>@prsn.Surname</td>
+                <td>@prsn.Age</td>
+                <td><a href="/Person/KayıtGuncelle/@prsn.PersonID" class="btn btn-info">Güncelle</a></td>
+                <td><a href="/Person/KayıtSil/@prsn.PersonID" class="btn btn-danger">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Person/KayıtEkle/" class="btn btn-primary">Yeni Kayıt Ekle</a>
+
+

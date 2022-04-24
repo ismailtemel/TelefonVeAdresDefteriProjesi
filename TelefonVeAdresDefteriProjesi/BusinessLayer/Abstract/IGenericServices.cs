@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BusinessLayer.Abstract
+{
+    // Burada dışarıdan bir T parametresi aldık.Yani entity.
+    // Genericservis oluşturmamızın sebebi her interface aynı şeyi yazmayı önlemek.
+    public interface IGenericServices<T>
+    {
+        void TAdd(T t);
+        void TDelete(T t);
+        void TUpdate(T t);
+        List<T>GetList();
+        T GetById(int id);
+    }
+}

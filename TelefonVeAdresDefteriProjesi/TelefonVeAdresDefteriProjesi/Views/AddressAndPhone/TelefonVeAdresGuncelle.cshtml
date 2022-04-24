@@ -1,0 +1,28 @@
+﻿@model EntityLayer.Concrete.AddressAndPhone
+@{
+    ViewData["Title"] = "TelefonVeAdresGuncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Telefon Ve Adres Guncelle</h1>
+@using (Html.BeginForm("TelefonVeAdresGuncelle", "AddressAndPhone", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.AddressAndPhoneID)
+    <br />
+    @Html.Label("KişiID")
+    @Html.TextBoxFor(x => x.PersonID, new { @class = "form-control" })
+    <br />
+    @Html.Label("Adres")
+    @Html.TextBoxFor(x => x.Address, new { @class = "form-control" })
+    <br />
+    @Html.Label("Telefon Numarası")
+    @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })
+    <br />
+    @Html.Label("İlçe")
+    @Html.TextBoxFor(x => x.State, new { @class = "form-control" })
+    <br />
+    @Html.Label("İl")
+    @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+}
